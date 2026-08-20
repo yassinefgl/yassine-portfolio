@@ -58,7 +58,7 @@ export const PERSONAL_INFO = {
     "AI Engineer",
     "Software Engineer"
   ],
-  currentStatus: "M1 Base de Données & Intelligence Artificielle (Dijon / Aix-Marseille)",
+  currentStatus: "Étudiant en 2ème année de Master en Base de Données et Intelligence Artificielle (M2 BDIA) à l'Université de Bourgogne Europe (Dijon)",
   location: "Dijon, France",
   phone: "+330759066735",
   formattedPhone: "+33 7 59 06 67 35",
@@ -68,13 +68,13 @@ export const PERSONAL_INFO = {
   portfolioUrl: "https://yassine-portfolio-nine.vercel.app",
   heroTagline: "Building intelligent systems from data, algorithms and software.",
   aboutText: [
-    "Étudiant en première année de Master en Base de Données et Intelligence Artificielle à l'Université de Bourgogne Europe (Dijon) / Université Aix-Marseille, passionné par le développement d'algorithmes d'apprentissage automatique, le traitement de données complexes et la conception d'architectures logicielles performantes.",
+    "Étudiant en deuxième année de Master (M2) en Base de Données et Intelligence Artificielle à l'Université de Bourgogne Europe (Dijon), passionné par le développement d'algorithmes d'apprentissage automatique, le traitement de données complexes et la conception d'architectures logicielles performantes.",
     "Formé aux piliers fondamentaux de la Data Science, de l'IA et de l'Ingénierie Logicielle (mention Très Bien en Master 1 IS2IA et Mention Bien en Licence Ingénierie Logicielle), j'allie rigueur mathématique et excellence technique pour concevoir des solutions applicatives intelligentes.",
     "Joueur d'échecs passionné classé ELO 2200 (niveau Candidate Master), j'applique une réflexion stratégique, une grande faculté d'analyse et une gestion méthodique de la complexité dans tous mes projets informatiques."
   ],
   stats: [
     { label: "Classement Échecs", value: "2200 ELO", detail: "Réflexion stratégique & analyse" },
-    { label: "Diplômes Supérieurs", value: "3 Parcours", detail: "Master BD&IA, Master IS2IA, Licence IL" },
+    { label: "Diplômes Supérieurs", value: "Master M2 BDIA", detail: "Université de Bourgogne Europe (Dijon)" },
     { label: "Expériences en Entreprise", value: "2 Stages", detail: "HPS (Data Science) & TELCO DEV (Full Stack)" },
     { label: "Projets Majeurs", value: "4 Projets", detail: "Fraud ML, Premier League AI, Chess Engine, FitGenius" }
   ],
@@ -136,11 +136,11 @@ export const EXPERIENCES: Experience[] = [
 
 export const EDUCATION_LIST: Education[] = [
   {
-    id: "m1-bdia-dijon",
-    degree: "Master 1 - Informatique",
+    id: "m2-bdia-dijon",
+    degree: "Master 2 - Informatique",
     specialty: "Parcours : Base de Données et Intelligence Artificielle (BDIA)",
-    institution: "Université de Bourgogne Europe (Dijon) / Université Aix-Marseille (Campus St Jérôme)",
-    location: "Dijon / Marseille, France",
+    institution: "Université de Bourgogne Europe",
+    location: "Dijon, France",
     period: "2025 – 2026",
     description: "Spécialisation avancée en bases de données distribuées, bases de données NoSQL, apprentissage automatique, analyse de données massives et systèmes d'intelligence artificielle."
   },
@@ -207,7 +207,7 @@ export const PROJECTS: Project[] = [
     id: "chess-game-ai",
     title: "Chess Game & Chess AI Engine",
     category: "Software Engineering",
-    period: "2025 – 2026 (Projet Académique M1)",
+    period: "2025 – 2026 (Projet Académique)",
     shortDescription: "Jeu d'échecs complet en Java avec GUI, intégration du moteur Stockfish, données Lichess et détection de triche.",
     problem: "Concevoir une application d'échecs robuste respectant l'ensemble des règles de la FIDE, capable d'analyser la qualité des coups en temps réel et d'identifier les profils de jeu suspects grâce aux données Lichess.",
     approach: "Développement orienté objet propre en Java, moteur d'analyse s'interfaçant avec le moteur de classe mondiale Stockfish via le protocole UCI, parsing de parties Lichess et algorithme d'analyse d'évaluation de coups pour détecter les anomalies de précision typiques de la triche informatique.",

@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Yassine ELFOUGHALI — Data Scientist · AI Engineer · Software Engineer",
-  description: "Portfolio officiel de Yassine ELFOUGHALI. Étudiant en Master BD&IA (Dijon / Aix-Marseille), spécialisé en Machine Learning, Data Science et Ingénierie Logicielle.",
+  description: "Portfolio officiel de Yassine ELFOUGHALI. Étudiant en Master 2 BDIA à l'Université de Bourgogne Europe (Dijon), spécialisé en Machine Learning, Data Science et Ingénierie Logicielle.",
   keywords: [
     "Yassine ELFOUGHALI",
     "Data Scientist",
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Deep Learning",
     "Data Science France",
     "Dijon",
+    "Université de Bourgogne Europe",
     "Stockfish Chess AI",
     "Financial Fraud Detection ML"
   ],
