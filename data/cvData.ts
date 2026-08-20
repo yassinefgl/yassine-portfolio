@@ -63,8 +63,9 @@ export const PERSONAL_INFO = {
   phone: "+330759066735",
   formattedPhone: "+33 7 59 06 67 35",
   email: "elfoughaliyassine@gmail.com",
-  github: "https://github.com",
+  github: "https://github.com/yassinefgl",
   linkedin: "https://linkedin.com",
+  portfolioUrl: "https://yassine-portfolio-nine.vercel.app",
   heroTagline: "Building intelligent systems from data, algorithms and software.",
   aboutText: [
     "Étudiant en première année de Master en Base de Données et Intelligence Artificielle à l'Université de Bourgogne Europe (Dijon) / Université Aix-Marseille, passionné par le développement d'algorithmes d'apprentissage automatique, le traitement de données complexes et la conception d'architectures logicielles performantes.",

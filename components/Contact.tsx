@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Check, Copy, Download, Sparkles, MessageSquare, QrCode } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/cvData";
@@ -14,6 +14,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenCvModal }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [formSent, setFormSent] = useState(false);
+  const [siteUrl, setSiteUrl] = useState("https://yassine-portfolio-nine.vercel.app");
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.origin.includes("vercel.app")) {
+      setSiteUrl(window.location.origin);
+    }
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -46,6 +53,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenCvModal }) => {
       setFormData({ name: "", email: "", subject: "Opportunité Stage / Alternance Data & AI", message: "" });
     }, 4000);
   };
+
+  const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(siteUrl)}&color=09090b&bgcolor=ffffff`;
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -125,18 +134,20 @@ export const Contact: React.FC<ContactProps> = ({ onOpenCvModal }) => {
               {/* QR Code Download Widget */}
               <div className="p-4 rounded-xl bg-slate-950/80 border border-blue-500/30 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white rounded-lg border border-slate-200">
-                    <img src="/portfolio-qrcode.png" alt="QR Code Portfolio" className="w-10 h-10 object-contain" />
+                  <div className="p-1.5 bg-white rounded-lg border border-slate-200">
+                    <img src={qrCodeApiUrl} alt="QR Code Portfolio" className="w-12 h-12 object-contain" />
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-bold text-blue-400 flex items-center gap-1">
-                      <QrCode className="w-3 h-3" /> QR Code Officiel du Portfolio
+                      <QrCode className="w-3 h-3" /> QR Code Officiel Vercel
                     </span>
-                    <p className="text-xs text-slate-300 font-medium">À intégrer sur votre CV imprimé ou PDF</p>
+                    <p className="text-xs text-slate-300 font-medium">Pointant vers {siteUrl}</p>
                   </div>
                 </div>
                 <a
-                  href="/portfolio-qrcode.png"
+                  href={qrCodeApiUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   download="Yassine_ELFOUGHALI_Portfolio_QRCode.png"
                   className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-md shadow-blue-600/20"
                 >
