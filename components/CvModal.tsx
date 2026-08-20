@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, FileText, Award, Briefcase, GraduationCap } from "lucide-react";
 import { PERSONAL_INFO, EXPERIENCES, EDUCATION_LIST, CERTIFICATIONS } from "@/data/cvData";
@@ -11,21 +11,11 @@ interface CvModalProps {
 }
 
 export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
-  const [siteUrl, setSiteUrl] = useState("https://yassine-portfolio-nine.vercel.app");
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.origin.includes("vercel.app")) {
-      setSiteUrl(window.location.origin);
-    }
-  }, []);
-
   if (!isOpen) return null;
 
   const handleDownloadPDF = () => {
     window.print();
   };
-
-  const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(siteUrl)}&color=09090b&bgcolor=ffffff`;
 
   return (
     <AnimatePresence>
@@ -67,7 +57,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
 
           {/* CV Content Document */}
           <div className="space-y-8 text-sm">
-            {/* Header Section with Profile Photo & Official QR Code */}
+            {/* Header Section with Profile Photo & Large HD Scannable QR Code */}
             <div className="border-b border-slate-800 pb-6 print:border-slate-300">
               <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
                 <div className="flex items-center gap-4">
@@ -88,7 +78,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 {/* QR Code & Contact Info */}
-                <div className="flex items-center gap-4 text-xs text-slate-400 print:text-slate-700">
+                <div className="flex items-center gap-5 text-xs text-slate-400 print:text-slate-700">
                   <div className="text-right space-y-1 hidden sm:block">
                     <p><span className="text-slate-200 print:text-black font-semibold">Téléphone:</span> {PERSONAL_INFO.formattedPhone}</p>
                     <p><span className="text-slate-200 print:text-black font-semibold">Email:</span> {PERSONAL_INFO.email}</p>
@@ -96,10 +86,10 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
                     <p><span className="text-slate-200 print:text-black font-semibold">Échecs:</span> ELO 2200</p>
                   </div>
 
-                  {/* Official Vercel QR Code */}
-                  <div className="p-2 rounded-xl bg-white border border-slate-200 shadow-md flex flex-col items-center gap-1 text-center text-slate-900">
-                    <img src={qrCodeApiUrl} alt="Portfolio QR Code" className="w-16 h-16 object-contain" />
-                    <span className="text-[9px] font-bold text-slate-800 leading-none">Scanner Portfolio</span>
+                  {/* Large High-Contrast Scannable QR Code */}
+                  <div className="p-2.5 rounded-xl bg-white border-2 border-blue-500/40 shadow-xl flex flex-col items-center gap-1.5 text-center text-slate-900 group hover:scale-110 transition-transform">
+                    <img src="/portfolio-qrcode.png" alt="QR Code Portfolio Yassine" className="w-24 h-24 sm:w-28 sm:h-28 object-contain" />
+                    <span className="text-[10px] font-extrabold text-slate-900 tracking-tight">Scanner Portfolio</span>
                   </div>
                 </div>
               </div>
